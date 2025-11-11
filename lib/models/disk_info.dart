@@ -7,7 +7,6 @@ class DiskInfo {
   final String type;
   final String fstype;
   final String usagePercent;
-  final String model;
 
   DiskInfo({
     required this.name,
@@ -18,7 +17,6 @@ class DiskInfo {
     required this.type,
     required this.fstype,
     required this.usagePercent,
-    required this.model,
   });
 
   factory DiskInfo.fromMap(Map<dynamic, dynamic> map) {
@@ -31,7 +29,6 @@ class DiskInfo {
       type: map['type'] ?? '',
       fstype: map['fstype'] ?? '',
       usagePercent: map['usagePercent'] ?? '0%',
-      model: map['model'] ?? '',
     );
   }
 
