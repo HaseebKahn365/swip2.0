@@ -31,10 +31,13 @@ class AppTheme {
   
   // Light Theme
   static ThemeData lightTheme() {
+    final baseTextTheme = GoogleFonts.interTextTheme();
+    
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
       fontFamily: GoogleFonts.inter().fontFamily,
+      fontFamilyFallback: const ['Inter', 'sans-serif'],
       
       colorScheme: const ColorScheme.light(
         primary: primaryBlue,
@@ -179,103 +182,103 @@ class AppTheme {
         linearTrackColor: borderLight,
       ),
       
-      textTheme: const TextTheme(
-        displayLarge: TextStyle(
-          fontFamily: 'Inter',
+      textTheme: GoogleFonts.interTextTheme(baseTextTheme).copyWith(
+        displayLarge: GoogleFonts.inter(
           fontSize: 36,
           fontWeight: FontWeight.w900,
           color: textPrimaryLight,
           letterSpacing: -0.033,
+          height: 1.2,
         ),
-        displayMedium: TextStyle(
-          fontFamily: 'Inter',
+        displayMedium: GoogleFonts.inter(
           fontSize: 32,
           fontWeight: FontWeight.w900,
           color: textPrimaryLight,
           letterSpacing: -0.033,
+          height: 1.2,
         ),
-        displaySmall: TextStyle(
-          fontFamily: 'Inter',
+        displaySmall: GoogleFonts.inter(
           fontSize: 28,
           fontWeight: FontWeight.w900,
           color: textPrimaryLight,
           letterSpacing: -0.033,
+          height: 1.2,
         ),
-        headlineLarge: TextStyle(
-          fontFamily: 'Inter',
+        headlineLarge: GoogleFonts.inter(
           fontSize: 24,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w800, // Increased from w700 to w800
           color: textPrimaryLight,
           letterSpacing: -0.015,
+          height: 1.3,
         ),
-        headlineMedium: TextStyle(
-          fontFamily: 'Inter',
+        headlineMedium: GoogleFonts.inter(
           fontSize: 22,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w800, // Increased from w700 to w800
           color: textPrimaryLight,
           letterSpacing: -0.015,
+          height: 1.3,
         ),
-        headlineSmall: TextStyle(
-          fontFamily: 'Inter',
+        headlineSmall: GoogleFonts.inter(
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: textPrimaryLight,
           letterSpacing: -0.015,
+          height: 1.3,
         ),
-        titleLarge: TextStyle(
-          fontFamily: 'Inter',
+        titleLarge: GoogleFonts.inter(
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: textPrimaryLight,
+          height: 1.4,
         ),
-        titleMedium: TextStyle(
-          fontFamily: 'Inter',
+        titleMedium: GoogleFonts.inter(
           fontSize: 16,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700, // Increased from w600 to w700
           color: textPrimaryLight,
+          height: 1.4,
         ),
-        titleSmall: TextStyle(
-          fontFamily: 'Inter',
+        titleSmall: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w600,
           color: textPrimaryLight,
+          height: 1.4,
         ),
-        bodyLarge: TextStyle(
-          fontFamily: 'Inter',
+        bodyLarge: GoogleFonts.inter(
           fontSize: 16,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w600, // Increw500 to w600
           color: textPrimaryLight,
+          height: 1.5,
         ),
-        bodyMedium: TextStyle(
-          fontFamily: 'Inter',
+        bodyMedium: GoogleFonts.inter(
           fontSize: 14,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w600, // Increased from w500 to w600
           color: textPrimaryLight,
+          height: 1.5,
         ),
-        bodySmall: TextStyle(
-          fontFamily: 'Inter',
+        bodySmall: GoogleFonts.inter(
           fontSize: 12,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w600, // Increased from w500 to w600
           color: textSecondaryLight,
+          height: 1.5,
         ),
-        labelLarge: TextStyle(
-          fontFamily: 'Inter',
+        labelLarge: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w700,
           color: textPrimaryLight,
           letterSpacing: 0.015,
+          height: 1.4,
         ),
-        labelMedium: TextStyle(
-          fontFamily: 'Inter',
+        labelMedium: GoogleFonts.inter(
           fontSize: 12,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700, // Increased from w600 to w700
           color: textPrimaryLight,
+          height: 1.4,
         ),
-        labelSmall: TextStyle(
-          fontFamily: 'Inter',
+        labelSmall: GoogleFonts.inter(
           fontSize: 11,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600, // Increased from w500 to w600
           color: textSecondaryLight,
+          height: 1.4,
         ),
       ),
     );
@@ -283,10 +286,13 @@ class AppTheme {
   
   // Dark Theme
   static ThemeData darkTheme() {
+    final baseTextTheme = GoogleFonts.interTextTheme(ThemeData.dark().textTheme);
+    
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
       fontFamily: GoogleFonts.inter().fontFamily,
+      fontFamilyFallback: const ['Inter', 'sans-serif'],
       
       colorScheme: const ColorScheme.dark(
         primary: primaryBlue,
@@ -435,100 +441,85 @@ class AppTheme {
         linearTrackColor: Colors.white.withValues(alpha: 0.1),
       ),
       
-      textTheme: const TextTheme(
-        displayLarge: TextStyle(
-          fontFamily: 'Inter',
+      textTheme: GoogleFonts.interTextTheme(baseTextTheme).copyWith(
+        displayLarge: GoogleFonts.inter(
           fontSize: 36,
           fontWeight: FontWeight.w900,
           color: textPrimaryDark,
           letterSpacing: -0.033,
         ),
-        displayMedium: TextStyle(
-          fontFamily: 'Inter',
+        displayMedium: GoogleFonts.inter(
           fontSize: 32,
           fontWeight: FontWeight.w900,
           color: textPrimaryDark,
           letterSpacing: -0.033,
         ),
-        displaySmall: TextStyle(
-          fontFamily: 'Inter',
+        displaySmall: GoogleFonts.inter(
           fontSize: 28,
           fontWeight: FontWeight.w900,
           color: textPrimaryDark,
           letterSpacing: -0.033,
         ),
-        headlineLarge: TextStyle(
-          fontFamily: 'Inter',
+        headlineLarge: GoogleFonts.inter(
           fontSize: 24,
           fontWeight: FontWeight.w700,
           color: textPrimaryDark,
           letterSpacing: -0.015,
         ),
-        headlineMedium: TextStyle(
-          fontFamily: 'Inter',
+        headlineMedium: GoogleFonts.inter(
           fontSize: 22,
           fontWeight: FontWeight.w700,
           color: textPrimaryDark,
           letterSpacing: -0.015,
         ),
-        headlineSmall: TextStyle(
-          fontFamily: 'Inter',
+        headlineSmall: GoogleFonts.inter(
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: textPrimaryDark,
           letterSpacing: -0.015,
         ),
-        titleLarge: TextStyle(
-          fontFamily: 'Inter',
+        titleLarge: GoogleFonts.inter(
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: textPrimaryDark,
         ),
-        titleMedium: TextStyle(
-          fontFamily: 'Inter',
+        titleMedium: GoogleFonts.inter(
           fontSize: 16,
           fontWeight: FontWeight.w600,
           color: textPrimaryDark,
         ),
-        titleSmall: TextStyle(
-          fontFamily: 'Inter',
+        titleSmall: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w600,
           color: textPrimaryDark,
         ),
-        bodyLarge: TextStyle(
-          fontFamily: 'Inter',
+        bodyLarge: GoogleFonts.inter(
           fontSize: 16,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500, // Increased from w400 to w500
           color: textPrimaryDark,
         ),
-        bodyMedium: TextStyle(
-          fontFamily: 'Inter',
+        bodyMedium: GoogleFonts.inter(
           fontSize: 14,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500, // Increased from w400 to w500
           color: textPrimaryDark,
         ),
-        bodySmall: TextStyle(
-          fontFamily: 'Inter',
+        bodySmall: GoogleFonts.inter(
           fontSize: 12,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500, // Increased from w400 to w500
           color: textSecondaryDark,
         ),
-        labelLarge: TextStyle(
-          fontFamily: 'Inter',
+        labelLarge: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w700,
           color: textPrimaryDark,
           letterSpacing: 0.015,
         ),
-        labelMedium: TextStyle(
-          fontFamily: 'Inter',
+        labelMedium: GoogleFonts.inter(
           fontSize: 12,
           fontWeight: FontWeight.w600,
           color: textPrimaryDark,
         ),
-        labelSmall: TextStyle(
-          fontFamily: 'Inter',
+        labelSmall: GoogleFonts.inter(
           fontSize: 11,
           fontWeight: FontWeight.w500,
           color: textSecondaryDark,

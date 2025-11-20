@@ -7,11 +7,13 @@
 
 #include "flutter/generated_plugin_registrant.h"
 #include "disk_monitor_plugin.h"
+// #include "device_registry_plugin.h"
 
 struct _MyApplication {
   GtkApplication parent_instance;
   char** dart_entrypoint_arguments;
   DiskMonitorPlugin* disk_monitor_plugin;
+  // DeviceRegistryPlugin* device_registry_plugin;
 };
 
 G_DEFINE_TYPE(MyApplication, my_application, GTK_TYPE_APPLICATION)
@@ -75,9 +77,10 @@ static void my_application_activate(GApplication* application) {
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
 
-  // Register disk monitor plugin
+  // Register plugins
   FlBinaryMessenger* messenger = fl_engine_get_binary_messenger(fl_view_get_engine(view));
   self->disk_monitor_plugin = disk_monitor_plugin_new(messenger);
+  // self->device_registry_plugin = device_registry_plugin_new(messenger);
 
   gtk_widget_grab_focus(GTK_WIDGET(view));
 }
@@ -124,6 +127,7 @@ static void my_application_dispose(GObject* object) {
   MyApplication* self = MY_APPLICATION(object);
   g_clear_pointer(&self->dart_entrypoint_arguments, g_strfreev);
   g_clear_object(&self->disk_monitor_plugin);
+  // g_clear_object(&self->device_registry_plugin);
   G_OBJECT_CLASS(my_application_parent_class)->dispose(object);
 }
 

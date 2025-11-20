@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Erase Method Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400,700&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#135bec", "background-light": "#f6f6f8", "background-dark": "#101622"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex h-full grow flex-col">
+<main class="flex flex-1 justify-center py-5 sm:px-6 lg:px-8">
+<div class="flex w-full max-w-4xl flex-col px-4">
+<!-- PageHeading -->
+<div class="flex flex-wrap items-center justify-between gap-3 p-4">
+<h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Erase Method Selection</h1>
+</div>
+<!-- DescriptionList -->
+<div class="p-4">
+<div class="grid grid-cols-[120px_1fr] gap-x-6 border-t border-gray-200 dark:border-white/20 py-4">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Model</p>
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Crucial MX500</p>
+</div>
+</div>
+<!-- ActionPanel (Warning Banner) -->
+<div class="p-4 @container">
+<div class="flex flex-1 flex-col items-start justify-between gap-4 rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-5 @[480px]:flex-row @[480px]:items-center">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-yellow-500 mt-0.5">warning</span>
+<div class="flex flex-col gap-1">
+<p class="text-yellow-200 text-base font-bold leading-tight">Purge Operations Target Entire Physical Drive</p>
+<p class="text-yellow-300/80 text-sm font-normal leading-normal">
+                                        Please ensure you have selected the correct device before proceeding. This action cannot be undone.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- SectionHeader -->
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-8">NIST Clear: Secure Overwrite Methods</h2>
+<!-- RadioList for Overwrite Methods -->
+<div class="flex flex-col gap-3 p-4">
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-200 dark:border-white/20 p-4 transition-colors hover:bg-gray-50 dark:hover:bg-white/5 has-[:checked]:border-primary dark:has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-gray-300 dark:border-gray-600 bg-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:checked:border-primary" name="erase-method" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Simple Overwrite (Zeros)</p>
+</div>
+</label>
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-200 dark:border-white/20 p-4 transition-colors hover:bg-gray-50 dark:hover:bg-white/5 has-[:checked]:border-primary dark:has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-gray-300 dark:border-gray-600 bg-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:checked:border-primary" name="erase-method" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Simple Overwrite (Ones)</p>
+</div>
+</label>
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-200 dark:border-white/20 p-4 transition-colors hover:bg-gray-50 dark:hover:bg-white/5 has-[:checked]:border-primary dark:has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-gray-300 dark:border-gray-600 bg-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:checked:border-primary" name="erase-method" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">DoD 5220.22-M (3-pass)</p>
+</div>
+</label>
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-200 dark:border-white/20 p-4 transition-colors hover:bg-gray-50 dark:hover:bg-white/5 has-[:checked]:border-primary dark:has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-gray-300 dark:border-gray-600 bg-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:checked:border-primary" name="erase-method" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Gutmann (35-pass)</p>
+</div>
+</label>
+</div>
+<!-- SectionHeader -->
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-8">NIST Purge: Device-Level Erase Methods</h2>
+<!-- RadioList for Device-Level Methods -->
+<div class="flex flex-col gap-3 p-4">
+<label class="flex cursor-not-allowed items-center gap-4 rounded-lg border border-gray-200 dark:border-white/20 p-4 opacity-50">
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-gray-300 dark:border-gray-600 bg-transparent" disabled="" name="erase-method" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">NVMe Sanitize/Format</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Incompatible: NVMe drive required</p>
+</div>
+</label>
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-200 dark:border-white/20 p-4 transition-colors hover:bg-gray-50 dark:hover:bg-white/5 has-[:checked]:border-primary dark:has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-gray-300 dark:border-gray-600 bg-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:checked:border-primary" name="erase-method" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">ATA SECURITY ERASE</p>
+<p class="text-primary/80 text-xs font-medium">Compatible with this SATA drive</p>
+</div>
+</label>
+<label class="flex cursor-not-allowed items-center gap-4 rounded-lg border border-gray-200 dark:border-white/20 p-4 opacity-50">
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-gray-300 dark:border-gray-600 bg-transparent" disabled="" name="erase-method" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">SCSI/SAS FORMAT/SANITIZE</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Incompatible: SCSI/SAS drive required</p>
+</div>
+</label>
+</div>
+<!-- Action Button -->
+<div class="sticky bottom-0 mt-auto p-4 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm border-t border-gray-200 dark:border-white/20 -mx-4">
+<button class="w-full justify-center text-center rounded-lg bg-primary px-6 py-3 text-base font-bold text-background-dark transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50" disabled="">Start Sanitization</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
